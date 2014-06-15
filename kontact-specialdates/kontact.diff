@@ -1,0 +1,33 @@
+--- libkholidays/kholidays.cpp.orig	2014-02-27 01:51:42.813732266 +0400
++++ libkholidays/kholidays.cpp	2014-02-27 01:52:04.617732237 +0400
+@@ -70,7 +70,7 @@
+ 
+ 
+ 
+-KHolidays::KHolidays( const QString& location )
++KHolidays( const QString& location )
+   : mLocation( location )
+ {
+   mHolidayFile = fileForLocation( location );
+--- kontact/plugins/specialdates/sdsummarywidget.cpp.orig	2014-02-27 01:53:43.960732106 +0400
++++ kontact/plugins/specialdates/sdsummarywidget.cpp	2014-02-27 01:53:52.148732095 +0400
+@@ -438,7 +438,7 @@
+ 
+       //Muck with the year -- change to the year 'daysTo' days away
+       int year = currentDate.addDays( (*addrIt).daysTo ).year();
+-      QDate sD = QDate::QDate( year,
++      QDate sD = QDate( year,
+                            (*addrIt).date.month(), (*addrIt).date.day() );
+ 
+       if ( (*addrIt).daysTo == 0 ) {
+--- kontact/plugins/specialdates/sdsummarywidget.h.orig	2014-02-27 01:51:48.550732258 +0400
++++ kontact/plugins/specialdates/sdsummarywidget.h	2014-02-27 01:51:59.623732244 +0400
+@@ -78,7 +78,7 @@
+     bool mShowHolidays;
+     bool mShowSpecialsFromCal;
+ 
+-    KHolidays::KHolidays *mHolidays;
++    KHolidays *mHolidays;
+ };
+ 
+ #endif

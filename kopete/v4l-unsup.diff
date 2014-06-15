@@ -1,0 +1,33 @@
+--- ./kopete/libkopete/avdevice/videodevice.h.orig	2014-02-27 02:52:52.074727416 +0400
++++ ./kopete/libkopete/avdevice/videodevice.h	2014-02-27 02:53:06.078727398 +0400
+@@ -52,7 +52,7 @@
+ 
+ #include <linux/fs.h>
+ #include <linux/kernel.h>
+-#include <linux/videodev.h>
++#include <libv4l1-videodev.h>
+ #define VIDEO_MODE_PAL_Nc  3
+ #define VIDEO_MODE_PAL_M   4
+ #define VIDEO_MODE_PAL_N   5
+--- ./kopete/kopete/chatwindow/krichtexteditpart.cpp.orig	2014-02-27 02:51:07.654727554 +0400
++++ ./kopete/kopete/chatwindow/krichtexteditpart.cpp	2014-02-27 02:52:02.381727482 +0400
+@@ -38,7 +38,7 @@
+ KopeteRichTextEditPart::KopeteRichTextEditPart( QWidget *wparent, const char *wname, QObject*, const char*, const QStringList& )
+ 	: KParts::ReadOnlyPart( wparent, wname ? wname : "rich_text_part" )
+ {
+-	KopeteRichTextEditPart::KopeteRichTextEditPart( wparent, wname, false );
++	KopeteRichTextEditPart( wparent, wname, false );
+ }
+ 
+ KopeteRichTextEditPart::KopeteRichTextEditPart( QWidget *parent, const char *name, int capabilities )
+--- ./kopete/kopete/contactlist/kopetegroupviewitem.cpp.orig	2014-02-27 02:52:19.720727459 +0400
++++ ./kopete/kopete/contactlist/kopetegroupviewitem.cpp	2014-02-27 02:52:42.325727429 +0400
+@@ -169,7 +169,7 @@
+ 	// the sorting itself is rather slow. Therefore we call delayedSort, which tries
+ 	// to group multiple sort requests into one.
+ 	using namespace Kopete::UI::ListView;
+-	if ( ListView::ListView *lv = dynamic_cast<ListView::ListView *>( listView() ) )
++	if ( ListView *lv = dynamic_cast<ListView *>( listView() ) )
+ 		lv->delayedSort();
+ 	else
+ 		listView()->sort();

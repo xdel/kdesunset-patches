@@ -1,0 +1,12 @@
+kde3-acinclude.patch
+kde3-automake-add-missing.patch
+kde3-automake-version.patch
+kdelibs-3.5.10-cups16.patch
+kdelibs-3.5.10-cups-util-missing-header.patch
+kdelibs-3.5.10-cve-2009-1698.patch
+kdelibs-3.5.10-cve-2009-2537-select-length.patch
+kdelibs-3.5.10-CVE-2009-2702.patch
+kdelibs-3.5.10-CVE-2013-2074.patch
+kdelibs-3.5.10-latex-syntax-kile-2.0.3.patch
+kdelibs-3.5.10-openssl.patch
+kdelibs-3.5.10-ossl-1.x.patch
