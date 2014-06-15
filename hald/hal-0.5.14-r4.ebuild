@@ -35,7 +35,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.61
 		 disk-partition? ( >=sys-block/parted-1.8.0 )
 		 ia64? ( >=sys-apps/dmidecode-2.7 )
 		 kernel_linux?	(
-							>=sys-fs/udev-125
+							|| ( >=sys-fs/udev-125 >=sys-fs/eudev-1.3 )
 							>=sys-apps/util-linux-2.16
 							>=sys-kernel/linux-headers-2.6.22
 							crypt?	( >=sys-fs/cryptsetup-1.0.5 )
